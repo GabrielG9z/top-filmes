@@ -11,6 +11,8 @@ import React from "react";
 import { useFonts } from "expo-font";
 import logo from "./assets/images/logo.png";
 
+import { Ionicons } from "@expo/vector-icons";
+
 const App = () => {
   const [fonteCarregada] = useFonts({
     monoton: require("./assets/fonts/Monoton-Regular.ttf"),
@@ -28,21 +30,37 @@ const App = () => {
 
       <View style={estilos.viewBotoes}>
         <Pressable style={estilos.botaoInicial}>
-          <Text style={estilos.textoBotao}>Buscar Filmes</Text>
+          <Text style={estilos.textoBotao}>
+            <Ionicons name="ios-search-outline" size={16} color="white" />{" "}
+            Buscar Filmes
+          </Text>
         </Pressable>
 
         <Pressable style={estilos.botaoInicial}>
-          <Text style={estilos.textoBotao}>Favoritos</Text>
+          <Text style={estilos.textoBotao}>
+            {" "}
+            Favoritos
+            <Ionicons name="star" size={16} color="white" />
+          </Text>
         </Pressable>
       </View>
 
       <View style={estilos.viewRodape}>
         <Pressable style={estilos.botaoFooter}>
-          <Text style={estilos.textoBotao}>Privacidade</Text>
+          <Text style={estilos.textoBotao}>
+            <Ionicons name="lock-closed" size={16} color="white" /> Privacidade
+          </Text>
         </Pressable>
 
         <Pressable style={estilos.botaoFooter}>
-          <Text style={estilos.textoBotao}>Sobre</Text>
+          <Text style={estilos.textoBotao}>
+            <Ionicons
+              name="information-circle-outline"
+              size={16}
+              color="white"
+            />{" "}
+            Sobre
+          </Text>
         </Pressable>
       </View>
     </SafeAreaView>
@@ -89,6 +107,7 @@ const estilos = StyleSheet.create({
     backgroundColor: "#c465d1",
   },
   botaoInicial: {
+    borderRadius: 7,
     borderStyle: "solid",
     borderWidth: 1,
     padding: 16,
