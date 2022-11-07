@@ -1,11 +1,19 @@
 import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useFonts } from "expo-font";
 
 const App = () => {
+  const [fonteCarregada] = useFonts({
+    monoton: require("./assets/fonts/Monoton-Regular.ttf"),
+  });
+
+  /* A condicional abaixo serve apenas para dar um pequeno tempo suficiente para o carregamento do arquivo de fonte antes do return do componente. */
+  if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
+
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.viewLogo}>
-        <Text>Top-filmes</Text>
+        <Text style={estilos.tituloApp}>Top-filmes</Text>
       </View>
 
       <View style={estilos.viewBotoes}>
@@ -25,22 +33,26 @@ export default App;
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "yellowgreen",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
   viewLogo: {
     flex: 3,
-    backgroundColor: "purple",
     textAlign: "center",
     width: "80%",
     justifyContent: "flex-end",
     alignItems: "center",
   },
+  tituloApp: {
+    fontFamily: "monoton",
+    fontSize: 36,
+    color: "#5451a6",
+    // fontWeight: "bold",
+  },
   viewBotoes: {
     flex: 2,
-    backgroundColor: "orangered",
+
     width: "80%",
     flexDirection: "row",
     justifyContent: "space-evenly",
@@ -48,7 +60,7 @@ const estilos = StyleSheet.create({
   },
   viewRodape: {
     flex: 0.5,
-    backgroundColor: "red",
+
     width: "80%",
     justifyContent: "space-between",
     flex: "row",
