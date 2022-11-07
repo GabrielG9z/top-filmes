@@ -1,20 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import React from "react";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <SafeAreaView style={estilos.container}>
+      <View style={estilos.viewLogo}>
+        <Text>Top-filmes</Text>
+      </View>
 
-const styles = StyleSheet.create({
+      <View style={estilos.viewBotoes}>
+        <Button title="Buscar Filmes" />
+        <Button title="Favoritos" />
+      </View>
+
+      <View style={estilos.viewBotoes}>
+        <Button title="Privacidade" />
+        <Button title="Sobre" />
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default App;
+
+const estilos = StyleSheet.create({
   container: {
+    backgroundColor: "yellowgreen",
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  viewLogo: {
+    flex: 3,
+    backgroundColor: "purple",
+    textAlign: "center",
+    width: "80%",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  viewBotoes: {
+    flex: 2,
+    backgroundColor: "orangered",
+    width: "80%",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
+  },
+  viewRodape: {
+    flex: 0.5,
+    backgroundColor: "red",
+    width: "80%",
+    justifyContent: "space-between",
+    flex: "row",
   },
 });
