@@ -10,7 +10,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 import logo from "../../assets/images/logo.png";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [fonteCarregada] = useFonts({
     monoton: require("../../assets/fonts/Monoton-Regular.ttf"),
   });
@@ -26,14 +26,24 @@ const Home = () => {
       </View>
 
       <View style={estilos.viewBotoes}>
-        <Pressable style={estilos.botaoInicial}>
+        <Pressable
+          style={estilos.botaoInicial}
+          onPress={() => {
+            navigation.navigate("FormBusca");
+          }}
+        >
           <Text style={estilos.textoBotao}>
             <Ionicons name="ios-search-outline" size={16} color="white" />
             Buscar Filmes
           </Text>
         </Pressable>
 
-        <Pressable style={estilos.botaoInicial}>
+        <Pressable
+          style={estilos.botaoInicial}
+          onPress={() => {
+            navigation.navigate("Favoritos");
+          }}
+        >
           <Text style={estilos.textoBotao}>
             Favoritos
             <Ionicons name="star" size={16} color="white" />
@@ -42,13 +52,23 @@ const Home = () => {
       </View>
 
       <View style={estilos.viewRodape}>
-        <Pressable style={estilos.botaoFooter}>
+        <Pressable
+          style={estilos.botaoFooter}
+          onPress={() => {
+            navigation.navigate("Privacidade");
+          }}
+        >
           <Text style={estilos.textoBotao}>
             <Ionicons name="lock-closed" size={16} color="white" /> Privacidade
           </Text>
         </Pressable>
 
-        <Pressable style={estilos.botaoFooter}>
+        <Pressable
+          style={estilos.botaoFooter}
+          onPress={() => {
+            navigation.navigate("Sobre");
+          }}
+        >
           <Text style={estilos.textoBotao}>
             <Ionicons
               name="information-circle-outline"
@@ -110,7 +130,7 @@ const estilos = StyleSheet.create({
     alignContent: "center",
   },
   botaoFooter: {
-    padding: 22,
+    /* padding: 22, */
   },
   textoBotao: {
     color: "white",

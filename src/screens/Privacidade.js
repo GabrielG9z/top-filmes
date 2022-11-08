@@ -10,7 +10,7 @@ const Privacidade = () => {
         </Text>
 
         <Text style={estilos.texto}>
-          A sua privacidade é importante para nós. É política do Dá Hora Filmes
+          A sua privacidade é importante para nós. É política do Top Filmes
           respeitar a sua privacidade em relação a qualquer informação sua que
           possamos coletar no site Dá Hora Filmes, e outros sites que possuímos
           e operamos.
