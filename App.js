@@ -5,6 +5,7 @@ import Privacidade from "./src/screens/Privacidade";
 import Sobre from "./src/screens/Sobre";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Resultados from "./src/screens/Resultado";
 import Home from "./src/screens/Home";
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
           <Stack.Screen component={Favoritos} name="Favoritos" />
           <Stack.Screen component={Privacidade} name="Privacidade" />
           <Stack.Screen component={Sobre} name="Sobre" />
+          <Stack.Screen component={Resultados} name="Resultados" />
         </Stack.Navigator>
       </NavigationContainer>
     </>
