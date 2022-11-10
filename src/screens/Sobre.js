@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 import logoApi from "../../assets/images/logo-tmdb.png";
 import React from "react";
 
@@ -7,15 +7,23 @@ const Sobre = () => {
     <SafeAreaView style={estilos.container}>
       <Text style={estilos.texto}>Sobre o app Top Filmes</Text>
       <Text style={estilos.texto}>
-        O app <Text style={estilos.nomeApp}>Top Filmes</Text> é um aplicativo
-        com a finalidade de permitir a busca por informações sobre filmes
-        existentes na base de dados pública disponibilizada pelo site The Movie
-        Database (TMDb). Ao localizar um filme, o usuário pode visualizar
-        informações como título, data de lançamento, nota média de avaliação e
-        uma breve descrição sobre o filme e, caso queira, salvar estas
-        informações em uma lista no próprio aplicativo para visualização
-        posterior. O aplicativo poderá receber novos recursos conforme o
-        feedback e demanda dos usuários.
+        <Text style={estilos.texto}>
+          O app <Text style={estilos.nomeApp}>Top Filmes</Text> é um aplicativo
+          com a finalidade de permitir a busca por informações sobre filmes
+          existentes na base de dados pública disponibilizada pelo site The
+          Movie Database (TMDb).
+        </Text>
+        <View style={estilos.viewTmdb}>
+          <Image source={logoApi} />
+        </View>
+        <Text style={estilos.texto}>
+          Ao localizar um filme, o usuário pode visualizar informações como
+          título, data de lançamento, nota média de avaliação e uma breve
+          descrição sobre o filme e, caso queira, salvar estas informações em
+          uma lista no próprio aplicativo para visualização posterior.
+        </Text>
+        O aplicativo poderá receber novos recursos conforme o feedback e demanda
+        dos usuários.
       </Text>
       <Text style={estilos.texto}>Top Filmes &copy; 2022</Text>
     </SafeAreaView>
@@ -40,5 +48,9 @@ const estilos = StyleSheet.create({
   nomeApp: {
     color: "5451a6",
     fontWeight: "bold",
+  },
+  viewTmdb: {
+    marginVertical: 8,
+    alignItems: "center",
   },
 });
