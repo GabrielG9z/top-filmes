@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import api from "../services/api";
-import apiKey from "../../apiKey.";
+import apiKey from "../../apiKey";
 
 const Resultados = ({ route }) => {
   /* Usamos a prop route (do React Navigation) para acessar os parâmetros desta rota de navegação e extrair os dados (neste caso, filme) enviados para esta tela Resultados */
