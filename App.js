@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Resultados from "./src/screens/Resultado";
 import Home from "./src/screens/Home";
+import Detalhes from "./src/screens/Detalhes";
 
 const App = () => {
   /* Inicializando através de uma constante o gerenciador de navegação Stack (pilha de telas) */
@@ -45,6 +46,7 @@ const App = () => {
           <Stack.Screen component={Privacidade} name="Privacidade" />
           <Stack.Screen component={Sobre} name="Sobre" />
           <Stack.Screen component={Resultados} name="Resultados" />
+          <Stack.Screen component={Detalhes} name="Detalhes" />
         </Stack.Navigator>
       </NavigationContainer>
     </>
