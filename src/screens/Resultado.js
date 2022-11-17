@@ -41,7 +41,7 @@ const Resultados = ({ route }) => {
 
         setInterval(() => {
           setLoading(false);
-        }, 3000);
+        }, 1000);
       } catch (error) {
         console.log("Deu ruim a busca na API:" + error.message);
       }
