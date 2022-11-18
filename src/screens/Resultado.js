@@ -39,9 +39,10 @@ const Resultados = ({ route }) => {
 
         setResultados(resposta.data.results);
 
-        setInterval(() => {
-          setLoading(false);
-        }, 1000);
+        //(Simulador de carregamento)
+        // setInterval(() => {
+        setLoading(false);
+        // }, 1000);
       } catch (error) {
         console.log("Deu ruim a busca na API:" + error.message);
       }

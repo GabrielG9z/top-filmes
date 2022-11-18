@@ -6,6 +6,7 @@ import {
   View,
   SafeAreaView,
   ScrollView,
+  Image,
 } from "react-native";
 import React from "react";
 import fotoAlternativa from "../../assets/images/foto-alternativa.jpg";
@@ -33,6 +34,7 @@ const Detalhes = ({ route }) => {
         >
           <Text style={estilos.titulo}>{filme.title}</Text>
         </ImageBackground>
+
         <View style={estilos.conteudo}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Text>
@@ -67,6 +69,7 @@ const estilos = StyleSheet.create({
   imagem: {
     height: 200,
     justifyContent: "center",
+    resizeMode: "cover",
   },
   conteudo: {
     /* Flex 1 adicionado para que possamos usar o scrollView  */
