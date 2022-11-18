@@ -16,9 +16,9 @@ const CardFilme = ({ filme }) => {
     navigation.navigate("Detalhes", { filme });
   };
   const salvar = async () => {
-    /* Etapas para o uso do asyncStorage
-    
-    1) Carregamento do storage do aparelho (se houver, caso contrário retorna null*/
+    /* Etapas para o uso do asyncStorage*/
+
+    /*1) Carregamento do storage do aparelho (se houver, caso contrário retorna null*/
     const filmesFavoritos = await AsyncStorage.getItem("@favoritos");
     /*2) Havendo storage prévio, transformamos os dados do filme em objeto e guardamos numa lista (array) */
     let listaDeFilmes = JSON.parse(filmesFavoritos);
@@ -27,6 +27,13 @@ const CardFilme = ({ filme }) => {
     /* 3) Se a lista não for indefinida, vamos inicia-la vazia*/
     if (!listaDeFilmes) {
       listaDeFilmes = [];
+    }
+    /*Para cada filme existente na listaDeFilmes (se existir), vamos verificar se o id do filme existente é igual ao id do filme do card */
+    for (let filmeExistente in listaDeFilmes) {
+      if (listaDeFilmes[filmeExistente].id == filme.id) {
+        Alert.alert("Ops!", "Você já salvou este filme!");
+        return;
+      }
     }
 
     /* 4) Adcicionamos os dados do filme na lista (array) */
